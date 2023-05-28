@@ -19,7 +19,7 @@
 # Dependencies
 
 - `bash`, `curl`, `tar`: generic POSIX utilities.
-- **Optional**: `ASDF_gobackup_OVERWRITE_ARCH` if present you can specify arch to download an specific one.
+- **Optional**: `ASDF_GOBACKUP_OVERWRITE_ARCH` if present you can specify arch to download an specific one.
 
 # Install
 

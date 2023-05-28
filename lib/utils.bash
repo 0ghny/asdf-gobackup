@@ -80,10 +80,9 @@ install_version() {
 get_platform() {
   local platform="Linux"
   case "$(uname -s | tr '[:upper:]' '[:lower:]')" in
-    darwin) platform="darwin" ;;
-    linux) platform="linux" ;;
-    windows|"CYGWIN"*|"MINGW"*) platform="windows" ;;
-    *) platform_not_supported; ;;
+  darwin) platform="darwin" ;;
+  linux) platform="linux" ;;
+  *) platform_not_supported ;;
   esac
 
   echo -n $platform
@@ -94,9 +93,9 @@ get_platform() {
 get_arch() {
   local arch="x86_64"
   case "$(uname -m)" in
-    arm64|aarch64) arch="arm64"; ;;
-    x86_64|amd64) arch="amd64"; ;;
-    *) architecture_not_supported; ;;
+  arm64 | aarch64) arch="arm64" ;;
+  x86_64 | amd64) arch="amd64" ;;
+  *) architecture_not_supported ;;
   esac
   echo -n "${arch}"
 }
@@ -106,10 +105,9 @@ get_arch() {
 get_file_ext() {
   local ext="tar.gz"
   case "$(uname | tr '[:upper:]' '[:lower:]')" in
-    darwin) ext="tar.gz" ;;
-    linux) ext="tar.gz" ;;
-    windows) ext="tar.gz" ;;
-    *) platform_not_supported; ;;
+  darwin) ext="tar.gz" ;;
+  linux) ext="tar.gz" ;;
+  *) platform_not_supported ;;
   esac
   echo -n "${ext}"
 }
