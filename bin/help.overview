@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
 cat <<-EOM
-Manage Backup Automation with GoBackup
+	Manage Backup Automation with GoBackup
 EOM
