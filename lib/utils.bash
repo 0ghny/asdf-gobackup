@@ -21,11 +21,10 @@ sort_versions() {
 list_github_tags() {
   git ls-remote --tags --refs "$GH_REPO" |
     grep -o 'refs/tags/.*' | cut -d/ -f3- |
-    sed 's/^v//' # NOTE: You might want to adapt this sed to remove non-version strings from tags
+    sed 's/^v//'
 }
 
 list_all_versions() {
-  # Change this function if gobackup has other means of determining installable versions.
   list_github_tags
 }
 
@@ -104,13 +103,6 @@ get_file_ext() {
   *) platform_not_supported ;;
   esac
   echo -n "${ext}"
-}
-# .............................................................................
-# LOG::fail
-# .............................................................................
-fail() {
-  echo "[$(date +'%Y-%m-%dT%H:%M:%S%z')][FAIL] $*"
-  exit 1
 }
 # .............................................................................
 # platform_not_supported: Raise a platform not supported exception
