@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+cat <<-EOM
+	  Git Repository: https://github.com/gobackup/gobackup
+	  Documentation: https://gobackup.github.io/
+EOM
